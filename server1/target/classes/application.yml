@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: server1
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    enabled: true
+
+    service-url:
+      default-zone: http://localhost:8761/eureka/

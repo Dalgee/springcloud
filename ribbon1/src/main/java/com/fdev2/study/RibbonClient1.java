@@ -10,7 +10,9 @@ import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.PingUrl;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
@@ -37,7 +39,8 @@ import org.springframework.web.client.RestTemplate;
 @EnableTurbine
 public class RibbonClient1 {
     public static void main(String... args) {
-        SpringApplication.run(RibbonClient1.class, args);
+//        SpringApplication.run(RibbonClient1.class, args);
+        new SpringApplicationBuilder(RibbonClient1.class).web(WebApplicationType.SERVLET).run(args);
     }
 }
 
